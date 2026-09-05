@@ -87,5 +87,44 @@
     </div>
   </main>
   <footer>© 2026 Yi Tong</footer>
+  <script>
+    (() => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+
+      const profileItems = document.querySelectorAll('.profile-card > *');
+      const contentItems = document.querySelectorAll('.content-column > section, footer');
+      const revealItems = [...profileItems, ...contentItems];
+
+      revealItems.forEach((item) => item.classList.add('reveal-item'));
+      profileItems.forEach((item, index) => {
+        item.style.setProperty('--reveal-delay', `${80 + index * 65}ms`);
+      });
+
+      const finishReveal = (item) => {
+        item.classList.add('is-visible');
+        item.addEventListener('transitionend', () => {
+          item.classList.add('reveal-complete');
+        }, { once: true });
+      };
+
+      requestAnimationFrame(() => profileItems.forEach(finishReveal));
+
+      if (!('IntersectionObserver' in window)) {
+        contentItems.forEach(finishReveal);
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          finishReveal(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+      contentItems.forEach((item) => observer.observe(item));
+    })();
+  </script>
 </body>
 </html>
