@@ -1,7 +1,6 @@
 .DS_Store
 
 # Private source materials — do not publish with GitHub Pages.
-# Only the two PDFs linked on the website are published.
+# Only the M3 technical report linked on the website is published.
 materials/*
-!materials/YI TONG.pdf
 !materials/m3-technical-report-zh.pdf
