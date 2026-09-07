@@ -1,0 +1,85 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.7cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\definecolor{linkblue}{HTML}{18568A}
+\usepackage[colorlinks=true,urlcolor=linkblue,linkcolor=linkblue]{hyperref}
+\hypersetup{pdftitle={Yi Tong - Curriculum Vitae},pdfauthor={Yi Tong}}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\setlength{\emergencystretch}{2em}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{9pt}{5pt}
+\setlist[itemize]{leftmargin=14pt,itemsep=2pt,topsep=3pt,parsep=0pt}
+\urlstyle{same}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Yi Tong}\\[5pt]
+\href{mailto:cufe206303@gmail.com}{cufe206303@gmail.com}\enspace$\cdot$\enspace +86 19707933383\enspace$\cdot$\enspace
+\href{https://cufe-hust.github.io/}{Website}\enspace$\cdot$\enspace
+\href{https://github.com/CuFe-hust}{GitHub}
+\end{center}
+\vspace{-8pt}
+
+\section{EDUCATION}
+\textbf{Huazhong University of Science and Technology}\hfill \textbf{2024--2028 (Expected)}\\
+\textit{Third-year undergraduate, Cyberspace Security}\hfill Wuhan, China
+\begin{itemize}
+\item \textbf{GPA:} 4.36/5.00; \textbf{Average Score:} 88.8/100; \textbf{Rank:} 19/81
+\item \textbf{Selected Coursework:} Linear Algebra (A), Probability Theory and Mathematical Statistics (A+), Discrete Mathematics I/II (A/A+), Numerical Analysis (B+), Computer Networks (A), Digital Circuit and Logic Design (A+).
+\item \textbf{Honors \& Awards:}
+\begin{itemize}[label=\textbullet,topsep=2pt,itemsep=1pt]
+\item Bronze Award, University-level Round, 14th ``Qiushi Cup'' College Student Entrepreneurship Plan Competition --- Apr. 2026
+\item Academic Excellence Scholarship --- Sep. 2025; Apr. 2025
+\item Scholarship for Cultural and Sports Activities --- Sep. 2025; Apr. 2025
+\end{itemize}
+\end{itemize}
+
+\section{RESEARCH \& PROJECT EXPERIENCE}
+\textbf{M\textsuperscript{3}-RS: MoE-Mind Multimodal Remote Sensing}\hfill Aug. 2026\\
+\textit{Team Lead and Primary Developer}\\
+Advisor: \href{https://cse-sinclab.hust.edu.cn/info/1014/1183.htm}{Jiaxi Zhou}
+\begin{itemize}
+\item Designed and implemented a multimodal agent system to address the distinct visual evidence requirements of remote-sensing tasks, using a visual planner to select tasks and relevant image regions and coordinate specialized agents with on-demand detection and segmentation tools.
+\item Led task-specific LoRA fine-tuning of a shared Qwen3.5-9B backbone, using training inputs constructed through the inference workflows to match runtime prompts, image views, and optional visual expert evidence.
+\item Evaluated the system across four remote-sensing benchmarks, achieving \textbf{71.92\% Acc@0.5} on VRSBench grounding and \textbf{58.99\% exact match} on XLRS-Bench VQA without training on XLRS-Bench VQA data; metrics were computed over valid predictions.
+\end{itemize}
+
+\textbf{Deliverables:} A \href{https://cufe-hust.github.io/materials/m3-technical-report-zh.pdf}{technical report (Chinese)} documenting the system design, training, and evaluation, and a \href{https://github.com/CuFe-hust/M3}{code repository} containing the implementation.
+
+\par\vspace{10pt}
+{\color{black!25}\hrule height 0.4pt}
+\vspace{10pt}
+\textbf{Deep Learning Summer Workshop}\hfill Jul. 2026\\
+\textit{NUS School of Computing}\\
+Advisors: \href{https://www.comp.nus.edu.sg/~jithin/index.html}{Jithin Vachery} and \href{https://www.comp.nus.edu.sg/cs/people/boyd/}{Boyd Anderson}
+
+\vspace{5pt}
+\begin{list}{}{\setlength{\leftmargin}{10pt}\setlength{\rightmargin}{0pt}\setlength{\topsep}{0pt}}
+\item[]
+\textbf{1. Pokonyan --- Assistive Robot for People with Hearing Loss}
+\begin{itemize}
+\item Co-designed the system architecture of an assistive robot for people with hearing loss, connecting environmental sound detection and real-time transcription with robot navigation, physical alerts, and smartphone displays.
+\item Collaboratively investigated audio filtering and transcription latency: tested band-pass filtering on mixed speech and environmental recordings, and adopted an open-source transcription pipeline pairing incremental output from a lightweight model with refinement by a larger model.
+\end{itemize}
+\textbf{Deliverables:} A \href{https://github.com/CherryPockyOvO/Pokonyan}{code repository}; featured in the course wrap-up slides at the final showcase.
+
+\par\vspace{9pt}
+\textbf{2. Embedded Cat Recognition on a Mobile Vehicle}
+\begin{itemize}
+\item Contributed to dataset collection, annotation, and YOLOv5 training for a Raspberry Pi 5--based mobile cat-recognition system, collaborating with teammates on model deployment.
+\end{itemize}
+\textbf{Deliverables:} A deployed cat-recognition system that correctly recognized all \textbf{8 test images} in the live demonstration---the only team in the course to achieve a perfect score.
+
+\end{list}
+
+\section{SKILLS}
+\textbf{Programming:} Python, C/C++\\
+\textbf{Skills:} PyTorch, Hugging Face Transformers, PEFT, MLLM post-training\\
+\textbf{AI Development Tools:} Codex, Claude Code, Pi, DeepSeek Harness\\
+\textbf{Languages:} English (CET-4: 570); Mandarin Chinese (Native)
+\end{document}
